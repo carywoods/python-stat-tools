@@ -19,8 +19,8 @@ def app():
             st.markdown("One Sample Data")
             gs_URL = st.session_state.gs_URL 
             googleSheetId = gs_URL.split("spreadsheets/d/")[1].split("/edit")[0]
-            #worksheetName = st.text_input("Sheet Name:","Bivariate")
-            worksheetName = st.text_input("Sheet Name:","rural")
+            worksheetName = st.text_input("Sheet Name:","Bivariate")
+            
             URL = f'https://docs.google.com/spreadsheets/d/{googleSheetId}/gviz/tq?tqx=out:csv&sheet={worksheetName}'
             if st.button('Refresh'):
                 df = pd.read_csv(URL)
